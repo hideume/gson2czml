@@ -2,22 +2,22 @@
 
 sorry for not english
 
-やっぱりutfでないと文字化けしますな
-
-とりあえずはじめてなんで色々変だとおもいますんでよろしく
-
-なんだか、github desktopも遅いのでvimだけでやろうかなあ？
-
-というわけで、エディタはvscodeを使い始めてます。
-git+軽いediterという意味ではatomよりいいんではないかと思います
+geojsonをczmlに変換するツールです
 
 # 使い方
 とりあえず、最初はtokyo.jsonを読みこんでこれを
 czmlに変換するのだけです。
 
-今後、jsonのpropertiresで検索を可能にしたり色指定を
-追加するつもりです。
+##サンプル実行
 
-python json2czml.py >test.czml
+python test.py >test.czml
 
-で使ってください
+で使ってみてください
+
+##呼び出し方
+test.pyの内容
+ from json2czml import json2czml
+ jc=json2czml()
+ jc.setColor("[0,0,255,128]")
+ print jc.to_czml('tokyo.json',{'area_en':'Tokubu'})
+
